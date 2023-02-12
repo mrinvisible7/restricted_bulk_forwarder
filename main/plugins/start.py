@@ -1,4 +1,4 @@
-#Github.com/Vasusen-code
+#Github.com/mrinvisible7
 
 import os
 from .. import bot as Drone
@@ -42,7 +42,7 @@ async def remt(event):
   
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Send me Link of any message to clone it here, For private channel message, send invite link first."
+    text = "Send me Link of any message to clone it here, For private channel message, send invite link first./n**support:** @mr_invisible_bots"
     #await start_srb(event, text)
     await event.reply(text, 
                       buttons=[
@@ -54,6 +54,6 @@ async def start(event):
                       buttons=[
                               [Button.inline("SET THUMB.", data="set"),
                                Button.inline("REM THUMB.", data="rem")],
-                              [Button.url("Maintained and Modified by", url="t.me/xTnmgbR6rjgCDF7iPoFfiN8YfBsez9Lv")]])
+                              [Button.url("Maintained and Modified by", url="t.me/mr_invisible_bots")]])
     '''
     
