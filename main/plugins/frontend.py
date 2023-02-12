@@ -29,9 +29,7 @@ process=[]
 timer=[]
 user=[]
 
-# To-Do:
-# Make these codes shorter and clean
-# ofc will never do it. 
+ 
 
 @Drone.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def clone(event):
@@ -43,8 +41,8 @@ async def clone(event):
             return
     lit=event.text
     li=lit.split("\n")
-    if len(li) > 5:
-        await event.reply("max 5 links per message")
+    if len(li) > 10:
+        await event.reply("max 10 links per message")
         return
     for li in li:
         #1239
