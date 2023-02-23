@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 10000:
-                    return await conv.send_message("You can only get upto 10000 files in a single batch.")
+                if value > 1000:
+                    return await conv.send_message("You can only get upto 1000 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -112,42 +112,8 @@ async def run_batch(userbot, client, sender, countdown, link):
             timer = 5
         elif i < 1250 and i > 1000:
             timer = 15
-        elif i < 1500 and i > 1250:
-            timer = 20
-        elif i < 2000 and i > 1500:
-            timer = 25
-        elif i < 2500 and i > 2000:
-            timer = 30
-        elif i < 3000 and i > 2500:
-            timer = 35
-        elif i < 3500 and i > 3000:
-            timer = 40
-        elif i < 4000 and i > 3500:
-            timer = 45
-        elif i < 4500 and i > 4000:
-            timer = 50
-        elif i < 5000 and i > 4500:
-            timer = 55
-        elif i < 5500 and i > 5000:
-            timer = 60
-        elif i < 6000:
-            timer = 65
-        elif i < 6500:
-            timer = 70
-        elif i < 7000:
-            timer = 75
-        elif i < 7500:
-            timer = 80
-        elif i < 8000: 
-            timer = 85
-        elif i < 8500: 
-            timer = 90
-        elif i < 9000:
-            timer = 95
-        elif i < 9500: 
-            timer = 100
-        elif i < 10000: 
-            timer = 105
+        
+     
         
         
         if 't.me/c/' not in link:
