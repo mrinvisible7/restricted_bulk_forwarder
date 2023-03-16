@@ -8,7 +8,7 @@ Plugin for both public & private channels!
 import logging
 import time, os, asyncio
 
-from .. import bot as Drone
+from .. import bot as Invix
 from .. import userbot, Bot, AUTH, SUDO_USERS
 #from .. import FORCESUB as fs
 from main.plugins.pyroplug import check, get_bulk_msg
@@ -36,7 +36,7 @@ ids = []
     msg = await userbot.get_messages(chat, ids=id)
     await event.client.send_message(event.chat_id, msg) 
 '''   
-@Drone.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/batch'))
+@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/batch'))
 async def _batch(event):
     '''
     #if not event.is_private:
@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 10000:
-                    return await conv.send_message("You can only get upto 10000 files in a single batch.")
+                if value > 1000000:
+                    return await conv.send_message("You can only get upto 1000000 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -97,61 +97,31 @@ async def _batch(event):
             ids.clear()
             batch.clear()
 
-@Drone.on(events.callbackquery.CallbackQuery(data="cancel"))
+@Invix.on(events.callbackquery.CallbackQuery(data="cancel"))
 async def cancel(event):
     ids.clear()
     
 async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
         timer = 6
-        if i < 25:
+        if i < 100:
             timer = 2
-        elif i < 50 and i > 25:
-            timer = 3
-        elif i < 100 and i > 50:
+        elif i < 1000 and i > 100:
+            timer = 4
+        elif i < 10000 and i > 1000:
             timer = 5
-        elif i < 1250 and i > 1000:
+        elif i < 50000 and i > 10000:
+            timer = 8
+        elif i < 100000 and i > 50000:
+            timer = 11
+        elif i < 200000 and i > 100000:
+            timer = 13
+        elif i < 1000000: 
             timer = 15
-        elif i < 1500 and i > 1250:
-            timer = 20
-        elif i < 2000 and i > 1500:
-            timer = 25
-        elif i < 2500 and i > 2000:
-            timer = 30
-        elif i < 3000 and i > 2500:
-            timer = 35
-        elif i < 3500 and i > 3000:
-            timer = 40
-        elif i < 4000 and i > 3500:
-            timer = 45
-        elif i < 4500 and i > 4000:
-            timer = 50
-        elif i < 5000 and i > 4500:
-            timer = 55
-        elif i < 5500 and i > 5000:
-            timer = 60
-        elif i < 6000:
-            timer = 65
-        elif i < 6500:
-            timer = 70
-        elif i < 7000:
-            timer = 75
-        elif i < 7500:
-            timer = 80
-        elif i < 8000: 
-            timer = 85
-        elif i < 8500: 
-            timer = 90
-        elif i < 9000:
-            timer = 95
-        elif i < 9500: 
-            timer = 100
-        elif i < 10000: 
-            timer = 105
         
         
         if 't.me/c/' not in link:
-            timer = 1 if i < 250 else 2
+            timer = 0 if i < 250 else 1
         try: 
             count_down = f"**Batch process ongoing.**\n\nProcess completed: {i+1}"
             #a =ids[i]
