@@ -1,4 +1,4 @@
-#Tg:mister_invisible/save_restricted
+#Tg:mister_invisiblebot/save_restricted
 #Github. com/mrinvisible7
 
 """
@@ -103,7 +103,7 @@ async def cancel(event):
     
 async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
-        timer = 60
+        timer = 6
         if i < 25:
             timer = 2
         elif i < 50 and i > 25:
@@ -151,7 +151,7 @@ async def run_batch(userbot, client, sender, countdown, link):
         
         
         if 't.me/c/' not in link:
-            timer = 2 if i < 25 else 3
+            timer = 1 if i < 250 else 2
         try: 
             count_down = f"**Batch process ongoing.**\n\nProcess completed: {i+1}"
             #a =ids[i]
