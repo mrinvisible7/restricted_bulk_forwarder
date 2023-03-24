@@ -12,7 +12,7 @@ from main.__main__ import botStartTime
 #from bot.helper.telegram_helper.message_utils import auto_delete_message, sendMessage, deleteMessage, sendPhoto, editMessage  #wow
 #from bot.helper.ext_utils.bot_utils import get_readable_file_size
 from telethon import events
-from .. import bot as Drone
+from .. import bot as Invix
 from .. import Bot, AUTH, SUDO_USERS
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
@@ -48,7 +48,7 @@ def get_readable_file_size(size_in_bytes) -> str:
         return 'File too large'
 
 
-@Drone.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/speedtest'))
+@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/speedtest'))
 async def speedtest(event):
     speed = await event.reply("Running Speed Test. Wait about some secs.")  #edit telethon
     test = Speedtest()
