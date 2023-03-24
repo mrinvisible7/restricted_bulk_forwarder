@@ -50,7 +50,7 @@ async def progress_for_pyrogram(
                 ]
             )
 
-        tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n\n├ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨: round(percentage, 2)\n\n├ 𝙀𝙏𝘼: {3}\n".format(
+        tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n├ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨: round(percentage, 2)\n├ 𝙀𝙏𝘼: {3}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙄𝙉𝙑𝙄𝙓 ⌋─╯\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
