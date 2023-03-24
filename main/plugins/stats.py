@@ -1,5 +1,5 @@
 #from pyrogram import Client, filters  d
-from .. import bot as Drone
+from .. import bot as Invix
 #from .. import Bot
 #from .. import FORCESUB as fs                        d
 from telethon import events
@@ -18,7 +18,7 @@ from main.plugins.helpers import TimeFormatter,  humanbytes
 
 
 
-@Drone.on(events.NewMessage(incoming=True, func=lambda e: e.is_private, pattern='/stats'))
+@Invix.on(events.NewMessage(incoming=True, func=lambda e: e.is_private, pattern='/stats'))
 async def stats(event):
     
    # duz = event.reply("...")
