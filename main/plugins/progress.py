@@ -46,7 +46,8 @@ async def progress_for_pyrogram(
                     for _ in range(14 - math.floor(percentage / 14))
             )
 
-        tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n├ 𝙀𝙏𝘼: {3}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙄𝙉𝙑𝙄𝙓 ⌋──╯".format(
+        tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n├ 𝙀𝙏𝘼: {3}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙏𝙀𝘼𝙈 𝙎𝙋𝙔 ⌋──╯".format(str(variable_0), str(variable_1), str(variable_2), str(variable_3))
+
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
